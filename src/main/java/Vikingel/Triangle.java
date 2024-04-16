@@ -1,6 +1,11 @@
 package Vikingel;
 
 import static java.lang.Math.abs;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Triangle {
     Point vertex1, vertex2, vertex3;
@@ -27,14 +32,28 @@ public class Triangle {
     }
 
     public double area(){
-//        double p = perimeter()/2;
-//        double ab = vertex1.distanceTo(vertex2);
-//        double bc = vertex2.distanceTo(vertex3);
-//        double ac = vertex1.distanceTo(vertex3);
-//        return Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
+        double p = perimeter()/2;
+       double ab = vertex1.distanceTo(vertex2);
+        double bc = vertex2.distanceTo(vertex3);
+       double ac = vertex1.distanceTo(vertex3);
+   //    return Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
 
         return 0.5*abs((vertex2.x - vertex1.x)*(vertex3.y- vertex1.y) - (vertex3.x- vertex1.x)*(vertex2.y- vertex1.y));
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Objects.equals(vertex1, triangle.vertex1) && Objects.equals(vertex2, triangle.vertex2) && Objects.equals(vertex3, triangle.vertex3);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(vertex1, vertex2, vertex3);
+    }
+
     public boolean eqTriang(Triangle t) {
         double side1 = vertex1.distanceTo(vertex2);
         double side2 = vertex1.distanceTo(vertex3);

@@ -3,6 +3,11 @@ import Vikingel.Triangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TriangleTest {
     static Point zero;
@@ -40,4 +45,5 @@ public class TriangleTest {
     //public void testEqualsTriangle(){
     //    Triangle triangle = new Triangle(new Point(0, 0), new Point(3, 4), new Point())
     //}
+
 }
